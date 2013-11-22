@@ -9,6 +9,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import hu.holdinarms.example.core.Keyword;
 import hu.holdinarms.example.dao.MyDao;
 
@@ -29,7 +31,7 @@ public class KeywordResource {
 	
 	@POST
 	@Path("{name}")
-	public boolean addKeyword(@PathParam("name") String name ){
+	public boolean addKeyword(@PathParam("name") @NotEmpty String name ){
 		myDao.insertToKeyword(name);
 		
 		return true;
