@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="zsurot">
+    
+        <createTable tableName="brand">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(40)" />
+        </createTable>
+        
+        <createTable tableName="keyword">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(40)" />
+        </createTable>
+        
+        <createTable tableName="campaign">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(40)" />
+            <column name="brand_id" type="bigint" />
+        </createTable>
+        
+        <addForeignKeyConstraint 
+          		baseColumnNames="brand_id"
+          		baseTableName="campaign"
+          		constraintName="br_camp_fk1"
+          		referencedColumnNames="id"
+          		referencedTableName="brand" />
+          		
+       	<createTable tableName="campaign_has_keyword">
+            <column name="campaign_id" type="bigint" />
+            <column name="keyword_id" type="bigint" />
+        </createTable>
+        
+        <addForeignKeyConstraint 
+          		baseColumnNames="campaign_id"
+          		baseTableName="campaign_has_keyword"
+          		constraintName="camp_camphk_fk1"
+          		referencedColumnNames="id"
+          		referencedTableName="campaign" />
+        
+        <addForeignKeyConstraint 
+          		baseColumnNames="keyword_id"
+          		baseTableName="campaign_has_keyword"
+          		constraintName="key_camphk_fk2"
+          		referencedColumnNames="id"
+          		referencedTableName="keyword" />
+          		
+        <createTable tableName="competitor">
+            <column name="campaign_id" type="bigint" />
+            <column name="brand_id" type="bigint" />
+        </createTable>
+        
+        <addForeignKeyConstraint 
+          		baseColumnNames="campaign_id"
+          		baseTableName="competitor"
+          		constraintName="camp_comp_fk1"
+          		referencedColumnNames="id"
+          		referencedTableName="campaign" />
+        
+        <addForeignKeyConstraint 
+          		baseColumnNames="brand_id"
+          		baseTableName="competitor"
+          		constraintName="key_key_fk2"
+          		referencedColumnNames="id"
+          		referencedTableName="keyword" />
+        
+    </changeSet>
+</databaseChangeLog>
