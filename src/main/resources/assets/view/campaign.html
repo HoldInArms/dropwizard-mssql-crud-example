@@ -1,63 +1,58 @@
 <div class="row" class="text-center">
-	<div class="col-lg-8 col-lg-offset-2">
-
+	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
-			<span class="input-group-addon">New Name: </span> <input type="text"
-				class="form-control" placeholder="Name" /> <span
-				class="input-group-addon">Brand Id: </span>
-
-			<!-- 					<input type="text" class="form-control" readonly /> -->
-
-			<select class="form-control">
-				<option>1</option>
-				<option>2</option>
-				<option>100</option>
-				<option>1000</option>
-				<option>83452</option>
-			</select>
-
+			<span class="input-group-addon">New Name: </span> 
+			<input type="text" class="form-control" placeholder="Name" /> 
+			<span class="input-group-addon">Brand Id: </span> 
+				<select class="selectpicker">
+				<option>Type 1</option>
+				<option>Type 2</option>
+			</select> 
+			<span class="input-group-btn">
+			  <button class="btn btn-primary" type="button">
+			    <span class="glyphicon glyphicon-plus"></span> 
+			      <b>Add New Data</b>
+				</button>
+			</span>
 		</div>
-		<div class="input-group-btn">
-			<button class="btn btn-block btn-primary" type="button">
-				<span class="glyphicon glyphicon-plus"></span> Add New Data
-			</button>
-		</div>
-		<br />
-
-		<table class="table table-striped">
-			<tbody>
-				<tr>
-					<th class="th">Id</th>
-					<th class="th">Name</th>
-					<th class="th">Brand ID</th>
-					<th class="th">Commands</th>
-				</tr>
-				<tr>
-					<th class="th">1</th>
-					<th class="th">Aranka Kampanya</th>
-					<th class="th">101</th>
-					<th class="th"><button type="button" class="btn btn-warning"
-							id="button_brand">
-							<span class="glyphicon glyphicon-pencil"></span> Modify
-						</button>
-						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-remove-sign"></span> Delete
-						</button></th>
-				</tr>
-				<tr>
-					<th class="th">2</th>
-					<th class="th">Tibi Atya Kampanya</th>
-					<th class="th">1337</th>
-					<th class="th"><button type="button" class="btn btn-warning"
-							id="button_brand">
-							<span class="glyphicon glyphicon-pencil"></span> Modify
-						</button>
-						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-remove-sign"></span> Delete
-						</button></th>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+		<!-- 					<input type="text" class="form-control" readonly /> -->
+	<br /> 
+	<br /> 
+	<br />
+	
+	<table class="table table-striped">
+		<tbody>
+			<tr>
+				<th class="th">Id</th>
+				<th class="th">Name</th>
+				<th class="th">Brand ID</th>
+				<th class="th">Commands</th>
+			</tr>
+			<tr>
+				<th class="th">1</th>
+				<th class="th">Aranka Kampanya</th>
+				<th class="th">101</th>
+				<th class="th"><button type="button" class="btn btn-warning"
+						id="button_brand">
+						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_brand">
+						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+					</button></th>
+			</tr>
+			<tr>
+				<th class="th">2</th>
+				<th class="th">Tibi Atya Kampanya</th>
+				<th class="th">1337</th>
+				<th class="th"><button type="button" class="btn btn-warning"
+						id="button_brand">
+						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_brand">
+						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+					</button></th>
+			</tr>
+		</tbody>
+	</table>
+  </div>
 </div>
-
