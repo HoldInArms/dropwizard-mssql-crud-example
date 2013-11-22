@@ -12,13 +12,13 @@ import com.yammer.dropwizard.db.DatabaseConfiguration;
 
 public class MainConfiguration extends Configuration{
 
-	@NotEmpty
-	@JsonProperty
-	private String template;
-	
-	@NotEmpty
-	@JsonProperty
-	private String defaultName = "Stranger";
+//	@NotEmpty
+//	@JsonProperty
+//	private String template;
+//	
+//	@NotEmpty
+//	@JsonProperty
+//	private String defaultName = "Stranger";
 	
 	@Valid
 	@NotNull
@@ -26,14 +26,14 @@ public class MainConfiguration extends Configuration{
 	private DatabaseConfiguration database = new DatabaseConfiguration();
 	
 	
-	public String getTemplate(){
-		return template;
-	}
-	
-	public String getDefaultName(){
-		return defaultName;
-	}
-	
+//	public String getTemplate(){
+//		return template;
+//	}
+//	
+//	public String getDefaultName(){
+//		return defaultName;
+//	}
+//	
 	public DatabaseConfiguration getDatabaseConfiguration(){
 		return database;
 	}
