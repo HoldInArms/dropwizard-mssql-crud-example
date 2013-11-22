@@ -32,6 +32,9 @@ public interface MyDao {
 	@SqlUpdate("UPDATE brand SET name = :name WHERE id = :id")
 	void updateBrand( @Bind("id") String id, @Bind("name") String name );
 	
+	@SqlUpdate("DELETE FROM brand WHERE id = :id")
+	void deleteBrand( @Bind("id") String id );
+	
 	//Keyword
 	
 	@SqlQuery("select * from keyword")
@@ -40,6 +43,15 @@ public interface MyDao {
 	
 	@SqlUpdate("insert into keyword (name) values (:name)")
 	void insertToKeyword(@Bind("name") String name);
+	
+	@SqlQuery("select COUNT(*) from keyword where id = :id")
+	boolean existsKeyword( @Bind("id") String id );
+	
+	@SqlUpdate("UPDATE keyword SET name = :name WHERE id = :id")
+	void updateKeyword( @Bind("id") String id, @Bind("name") String name );
+	
+	@SqlUpdate("DELETE FROM keyword WHERE id = :id")
+	void deleteKeyword( @Bind("id") String id );
 	
 	//Campaign
 	

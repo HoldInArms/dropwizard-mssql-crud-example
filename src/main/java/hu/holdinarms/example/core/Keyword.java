@@ -6,6 +6,11 @@ public class Keyword {
 	
 	private String name;
 	
+	public Keyword(){
+		id = 0;
+		name = "";
+	}
+	
 	public Keyword(long id, String name) {
 		super();
 		this.id = id;
