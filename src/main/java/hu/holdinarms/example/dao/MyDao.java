@@ -32,6 +32,9 @@ public interface MyDao {
 	@SqlUpdate("UPDATE brand SET name = :name WHERE id = :id")
 	void updateBrand( @Bind("id") String id, @Bind("name") String name );
 	
+	@SqlUpdate("DELETE FROM brand WHERE id = :id")
+	void deleteBrand( @Bind("id") String id );
+	
 	//Keyword
 	
 	@SqlQuery("select * from keyword")
