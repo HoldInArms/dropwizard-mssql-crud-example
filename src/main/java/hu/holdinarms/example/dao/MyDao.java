@@ -26,6 +26,12 @@ public interface MyDao {
 	@SqlUpdate("insert into brand (name) values (:name)")
 	void insertToBrand(@Bind("name") String name);
 	
+	@SqlQuery("select COUNT(*) from brand where id = :id")
+	boolean existsBrand( @Bind("id") String id );
+	
+	@SqlUpdate("UPDATE brand SET name = :name WHERE id = :id")
+	void updateBrand( @Bind("id") String id, @Bind("name") String name );
+	
 	//Keyword
 	
 	@SqlQuery("select * from keyword")
