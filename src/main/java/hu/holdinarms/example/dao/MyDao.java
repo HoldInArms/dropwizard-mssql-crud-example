@@ -44,6 +44,15 @@ public interface MyDao {
 	@SqlUpdate("insert into keyword (name) values (:name)")
 	void insertToKeyword(@Bind("name") String name);
 	
+	@SqlQuery("select COUNT(*) from keyword where id = :id")
+	boolean existsKeyword( @Bind("id") String id );
+	
+	@SqlUpdate("UPDATE keyword SET name = :name WHERE id = :id")
+	void updateKeyword( @Bind("id") String id, @Bind("name") String name );
+	
+	@SqlUpdate("DELETE FROM keyword WHERE id = :id")
+	void deleteKeyword( @Bind("id") String id );
+	
 	//Campaign
 	
 	@SqlQuery("select * from campaign")
