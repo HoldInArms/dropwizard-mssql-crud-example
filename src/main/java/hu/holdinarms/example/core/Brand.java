@@ -10,6 +10,11 @@ public class Brand {
 	@JsonProperty
 	private String name;
 	
+	public Brand(){
+		id = 0;
+		name = "";
+	}
+	
 	public Brand( long id, String name ){
 		super();
 		this.id = id;
