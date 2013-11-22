@@ -21,7 +21,7 @@ public class HtmlPageResource {
 		String pageContent = "";
 		
 		try{
-			URL clientPage = Resources.getResource("html/index.html");
+			URL clientPage = Resources.getResource("index.html");
 			pageContent = Resources.toString(clientPage, Charsets.UTF_8);
 		}catch(IOException e){
 			return Response.serverError().build();

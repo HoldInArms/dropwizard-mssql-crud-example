@@ -8,7 +8,9 @@ import hu.holdinarms.example.resources.BrandResource;
 import hu.holdinarms.example.resources.HelloWorldResource;
 import hu.holdinarms.example.resources.HtmlPageResource;
 import hu.holdinarms.example.resources.KeywordResource;
+
 import com.yammer.dropwizard.Service;
+import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
@@ -32,6 +34,8 @@ public class MainService extends Service<MainConfiguration>{
 			}
 			
 		});
+		
+		bootstrap.addBundle(new AssetsBundle("/assets/"));
 		
 	}
 	
