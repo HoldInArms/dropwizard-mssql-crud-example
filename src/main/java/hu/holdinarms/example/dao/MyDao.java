@@ -3,6 +3,7 @@ package hu.holdinarms.example.dao;
 import hu.holdinarms.example.core.Brand;
 import hu.holdinarms.example.core.Campaign;
 import hu.holdinarms.example.core.CampaignHasKeyword;
+import hu.holdinarms.example.core.Competitor;
 import hu.holdinarms.example.core.Keyword;
 
 import java.util.List;
@@ -46,5 +47,11 @@ public interface MyDao {
 	@SqlQuery("select * from campaign_has_keyword")
 	@Mapper(CampaignHasKeywordMapper.class)
 	public List<CampaignHasKeyword> getCampaignHasKeywordList();
+	
+	//Competitor
+	
+	@SqlQuery("select * from competitor")
+	@Mapper(CompetitorMapper.class)
+	public List<Competitor> getCompetitorList();
 	
 }

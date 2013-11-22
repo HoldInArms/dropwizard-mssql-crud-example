@@ -8,6 +8,7 @@ import hu.holdinarms.example.health.TemplateHealthCheck;
 import hu.holdinarms.example.resources.BrandResource;
 import hu.holdinarms.example.resources.CampaignHasKeywordResource;
 import hu.holdinarms.example.resources.CampaignResource;
+import hu.holdinarms.example.resources.CompetitorResource;
 import hu.holdinarms.example.resources.HtmlPageResource;
 import hu.holdinarms.example.resources.KeywordResource;
 
@@ -52,6 +53,7 @@ public class MainService extends Service<MainConfiguration>{
 		environment.addResource( new KeywordResource( dao ) );
 		environment.addResource( new CampaignResource( dao ));
 		environment.addResource( new CampaignHasKeywordResource( dao ) );
+		environment.addResource( new CompetitorResource( dao ) );
 	}
 
 }
