@@ -2,6 +2,7 @@ package hu.holdinarms.example.dao;
 
 import hu.holdinarms.example.core.Brand;
 import hu.holdinarms.example.core.Campaign;
+import hu.holdinarms.example.core.CampaignHasKeyword;
 import hu.holdinarms.example.core.Keyword;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 public interface MyDao {
 
 	//Brand
+	
 	@SqlQuery("select * from brand")
 	@Mapper(BrandMapper.class)
 	public List<Brand> getBrandList();
@@ -24,6 +26,7 @@ public interface MyDao {
 	void insertToBrand(@Bind("name") String name);
 	
 	//Keyword
+	
 	@SqlQuery("select * from keyword")
 	@Mapper(KeywordMapper.class)
 	public List<Keyword> getKeywordList();
@@ -32,8 +35,16 @@ public interface MyDao {
 	void insertToKeyword(@Bind("name") String name);
 	
 	//Campaign
+	
 	@SqlQuery("select * from campaign")
 	@Mapper(CampaignMapper.class)
 	public List<Campaign> getCampaingList();
+	
+	
+	//CampaignHasKeyword
+	
+	@SqlQuery("select * from campaign_has_keyword")
+	@Mapper(CampaignHasKeywordMapper.class)
+	public List<CampaignHasKeyword> getCampaignHasKeywordList();
 	
 }
