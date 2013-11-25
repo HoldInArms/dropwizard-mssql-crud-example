@@ -77,6 +77,9 @@ public interface MyDao {
 	@Mapper(CampaignHasKeywordMapper.class)
 	public List<CampaignHasKeyword> getCampaignHasKeywordList();
 	
+	@SqlUpdate("insert into campaign_has_keyword (campaign_id,keyword_id) values (:campaign_id,:keyword_id)")
+	void insertToCampaignHasKeyword(@Bind("campaign_id") long campaign_id, @Bind("keyword_id") long keyword_id);
+	
 	//Competitor
 	
 	@SqlQuery("select * from competitor")

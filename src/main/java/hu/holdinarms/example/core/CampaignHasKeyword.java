@@ -5,6 +5,11 @@ public class CampaignHasKeyword {
 	private long campaign_id;
 	
 	private long keyword_id;
+	
+	public CampaignHasKeyword(){
+		this.campaign_id = 0;
+		this.keyword_id = 0;
+	}
 
 	public CampaignHasKeyword(long campaign_id, long keyword_id) {
 		super();
