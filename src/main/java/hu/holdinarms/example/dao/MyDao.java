@@ -62,6 +62,12 @@ public interface MyDao {
 	@SqlUpdate("insert into campaign (name,brand_id) values (:name,:brand_id)")
 	void insertToCampaign(@Bind("name") String name, @Bind("brand_id") long brand_id);
 	
+	@SqlQuery("select COUNT(*) from campaign where id = :id")
+	boolean existsCampaign( @Bind("id") String id );
+	
+	@SqlUpdate("UPDATE campaign SET name = :name, brand_id = :brand_id WHERE id = :id")
+	void updateCampaign( @Bind("id") String id, @Bind("name") String name, @Bind("brand_id") long brand_id );
+	
 	//CampaignHasKeyword
 	
 	@SqlQuery("select * from campaign_has_keyword")
