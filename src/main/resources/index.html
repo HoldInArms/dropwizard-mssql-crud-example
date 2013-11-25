@@ -41,21 +41,18 @@
 <body class="body"   ng-app="holdinarmApp">
 	<h1 class="text-center">Epic Hold-In-Arm felület</h1>
 	<div ng-controller="menuController">
-		<table class="table">
-			<thead>
-				<tr>
-					<th colspan="4" class="text-center">
-						<div class="btn-group">
-							<a href="#brand"><button type="button" class="btn btn-{{ brandClass }}" id="button_brand"><span class="glyphicon glyphicon-star"></span> Brand</button></a>
-							<a href="#keyword"><button type="button" class="btn btn-{{keywordClass}}" id="button_keyword"><span class="glyphicon glyphicon-asterisk"></span> Keyword</button></a>
-							<a href="#campaign"><button type="button" class="btn btn-{{campaignClass}}" id="button_campaign"><span class="glyphicon glyphicon-globe"></span> Campaign</button></a>
-							<a href="#competitor"><button type="button" class="btn btn-{{competitorClass}}" id="button_competitor"><span class="glyphicon glyphicon-user"></span> Competitor</button></a>
-						</div>
-					</th>
-				</tr>
-			</thead>
-		</table>
+	  <div class="btn-toolbar">
+	    <div class="btn-group">
+		  <button type="button" class="btn btn-{{ brandClass }}" id="button_brand" onclick="location.href='#brand'"><span class="glyphicon glyphicon-star"></span> Brand</button>
+		  <button type="button" class="btn btn-{{keywordClass}}" id="button_keyword" onclick="location.href='#keyword'"><span class="glyphicon glyphicon-asterisk"></span> Keyword</button>
+		  <button type="button" class="btn btn-{{campaignClass}}" id="button_campaign" onclick="location.href='#campaign'"><span class="glyphicon glyphicon-globe"></span> Campaign</button>
+		  <button type="button" class="btn btn-{{competitorClass}}" id="button_competitor" onclick="location.href='#competitor'"><span class="glyphicon glyphicon-user"></span> Competitor</button>
+		 </div>
+	  </div>
 	</div>
+	<br />
+	<br />
+	<br />
 	<div ng-view>
 	</div>
 </body>
