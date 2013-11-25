@@ -2,30 +2,35 @@
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
 			<span class="input-group-addon">Campaign Id: </span> 
-       
-       <div class="dropdown">
-			<span class="input-group-btn">
-			  
-			    <button class="btn dropdown-toggle" type="button" id="competitor_dropdown1" data-toggle="dropdown">
+<!-- 			<input type="text" class="form-control" placeholder="Name" />		   -->
+            <span class="input-group-btn">
+			  <div class="dropdown">
+			    <button class="btn dropdown-toggle btn-block" type="button" id="competitor_dropdown2" data-toggle="dropdown">
 			    #ID
 			      <span class="caret"></span>
 			    </button>
-			    <ul class="dropdown-menu" role="menu" aria-labelledby="competitor_dropdown1">
+			    <ul class="dropdown-menu" role="menu" aria-labelledby="competitor_dropdown2">
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">100</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10000</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">100</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10000</a></li>
 			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
 			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
 			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">100</a></li>
 			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10000</a></li>
 			    </ul>
-		
-			</span>  
-				  </div>
-			  
+			  </div>
+			</span>
 		    <span class="input-group-addon">Brand Id: </span>
 
 		    
-			  <div class="dropdown">
 			  <span class="input-group-btn">
-			    <button class="btn dropdown-toggle" type="button" id="competitor_dropdown2" data-toggle="dropdown">
+			  <div class="dropdown">
+			    <button class="btn dropdown-toggle btn-block" type="button" id="competitor_dropdown2" data-toggle="dropdown">
 			    #ID
 			      <span class="caret"></span>
 			    </button>
@@ -35,9 +40,9 @@
 			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">100</a></li>
 			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10000</a></li>
 			    </ul>
-			  
+			  </div>
 			</span>
-			</div>
+			
 		    
 			<span class="input-group-btn">
 			<button class="btn btn-primary" type="button">
@@ -52,8 +57,18 @@
 			<tbody>
 				<tr>
 					<th class="th">Id</th>
-					<th class="th">Campaign ID</th>
-					<th class="th">Brand ID</th>
+					<th class="th">
+					Campaign ID
+					<button class="btn btn-xs" type="button">
+					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
+					 </button>
+					</th>
+					<th class="th">
+					Brand ID
+					<button class="btn btn-xs" type="button">
+					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
+					 </button>
+					</th>
 					<th class="th">Commands</th>
 				</tr>
 				<tr>
