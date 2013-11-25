@@ -5,6 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The Keyword test class.
+ * 
+ * @author Dgzt
+ */
 public class KeywordTest {
 
 	private Keyword keyword;
