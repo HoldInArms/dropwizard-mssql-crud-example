@@ -161,9 +161,9 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			} ]
 		}).success(function(data, status, headers, config) {
 			console.log("Success");
-
+			
 			$scope.campaigns = data;
-
+			
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});

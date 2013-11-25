@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row" ng-controller="campaignViewController">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
 			<span class="input-group-addon">New Name: </span> 
 			<input type="text" class="form-control" placeholder="Name" /> 
-			<span class="input-group-addon">Brand Id: </span> 
+			<span class="input-group-addon">Brand Name: </span> 
 			<span class="input-group-btn">
 			  <div class="dropdown">
 			    <button class="btn dropdown-toggle" type="button" id="campaign_dropdown" data-toggle="dropdown">
@@ -151,27 +151,19 @@
 					 </button>
 				</th>
 				<th class="th-left">
-				Brand ID
+				Brand Name
 				<button class="btn btn-xs" type="button">
 					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
 					 </button>
 				</th>
 				<th class="th-right">Commands</th>
 			</tr>
-			<tr>
-				<th class="th-left">Aranka Kampanya</th>
-				<th class="th-left">101</th>
-				<th class="th-right"><button type="button" class="btn btn-warning" id="button_brand">
-						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
-					</button>
-					<button type="button" class="btn btn-danger" id="button_brand">
-						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-					</button></th>
-			</tr>
-			<tr>
-				<th class="th-left">Tibi Atya Kampanya</th>
-				<th class="th-left">1337</th>
-				<th class="th-right"><button type="button" class="btn btn-warning" id="button_brand">
+			
+			<tr ng-repeat="campaign in campaigns">
+
+					<th class="th-left">{{ campaign.name }}</th>
+					<th class="th-left">{{ campaign.brand_id }}</th>
+					<th class="th-right"><button type="button" class="btn btn-warning" id="button_keyword">
 						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
 					<button type="button" class="btn btn-danger" id="button_brand">

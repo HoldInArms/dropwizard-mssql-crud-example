@@ -25,6 +25,7 @@ config([ '$routeProvider', function($routeProvider) {
 	})
 
 	.otherwise({
-		redirectTo : '/brand'
+		redirectTo : '/'
 	});
+	//TODO nincs next!!
 } ]);

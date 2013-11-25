@@ -14,7 +14,7 @@ angular.module('holdinarmApp.controllers', []).controller(
 			};
 		}).
 
-controller('keywordViewController', function($scope) {
+controller('keywordViewController', function($scope, Service) {
 	Service.getKeywords($scope);
 	$scope.setKeyword = function() {
 		Service.setKeyword($scope);
@@ -42,7 +42,7 @@ controller('campaignViewController', function($scope, Service) {
 	};
 }).
 
-controller('competitorViewController', function($scope) {
+controller('competitorViewController', function($scope, Service) {
 	Service.getCompetitors($scope);
 	$scope.setCompetitor = function() {
 		Service.setCompetitor($scope);

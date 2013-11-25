@@ -1,5 +1,4 @@
-
-<div class="row" class="text-center">
+<div class="row" ng-controller="keywordViewController">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
 			<span class="input-group-addon">New Name:</span> 
@@ -35,16 +34,20 @@
 							<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
 						</button></th>
 				</tr>
-				<tr>
-					<th class="th-left">Tibi Atya Keywordje</th>
-					<th class="th-right"><button type="button" class="btn btn-warning"
-							id="button_brand">
-							<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
-						</button>
-						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-						</button></th>
+					
+				<tr ng-repeat="keyword in keywords">
+
+					<th class="th-left">{{ keyword.name }}</th>
+					<th class="th-right"><button type="button" class="btn btn-warning" id="button_keyword">
+						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_brand">
+						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+					</button></th>
 				</tr>
+				
+				
+				
 			</tbody>
 		</table>
 
