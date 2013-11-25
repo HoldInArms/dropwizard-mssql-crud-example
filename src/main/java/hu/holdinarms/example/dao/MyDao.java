@@ -59,6 +59,8 @@ public interface MyDao {
 	@Mapper(CampaignMapper.class)
 	public List<Campaign> getCampaingList();
 	
+	@SqlUpdate("insert into campaign (name,brand_id) values (:name,:brand_id)")
+	void insertToCampaign(@Bind("name") String name, @Bind("brand_id") long brand_id);
 	
 	//CampaignHasKeyword
 	

@@ -6,13 +6,19 @@ public class Campaign {
 	
 	private String name;
 	
-	private long brandId;
+	private long brand_id;
+	
+	public Campaign(){
+		this.id = 0;
+		this.name = "";
+		this.brand_id = 0;
+	}
 
-	public Campaign(long id, String name, long brandId) {
+	public Campaign(long id, String name, long brand_id) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.brandId = brandId;
+		this.brand_id = brand_id;
 	}
 	
 	public long getId() {
@@ -31,12 +37,12 @@ public class Campaign {
 		this.name = name;
 	}
 
-	public long getBrandId() {
-		return brandId;
+	public long getBrand_id() {
+		return brand_id;
 	}
 
-	public void setBrandId(long brandId) {
-		this.brandId = brandId;
+	public void setBrand_id(long brand_id) {
+		this.brand_id = brand_id;
 	}
 	
 }
