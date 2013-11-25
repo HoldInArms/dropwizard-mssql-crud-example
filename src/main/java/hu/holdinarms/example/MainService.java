@@ -2,9 +2,8 @@ package hu.holdinarms.example;
 
 import org.skife.jdbi.v2.DBI;
 
-import hu.holdinarms.example.core.CampaignHasKeyword;
 import hu.holdinarms.example.dao.MyDao;
-import hu.holdinarms.example.health.TemplateHealthCheck;
+import hu.holdinarms.example.health.DatabaseHealthCheck;
 import hu.holdinarms.example.resources.BrandResource;
 import hu.holdinarms.example.resources.CampaignHasKeywordResource;
 import hu.holdinarms.example.resources.CampaignResource;
@@ -54,6 +53,8 @@ public class MainService extends Service<MainConfiguration>{
 		environment.addResource( new CampaignResource( dao ));
 		environment.addResource( new CampaignHasKeywordResource( dao ) );
 		environment.addResource( new CompetitorResource( dao ) );
+		
+		environment.addHealthCheck( new DatabaseHealthCheck(jdbi, configuration.getDatabaseConfiguration().getValidationQuery() ) );
 	}
 
 }

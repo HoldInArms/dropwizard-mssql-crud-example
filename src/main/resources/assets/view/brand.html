@@ -1,5 +1,4 @@
-
-<div class="row" class="text-center" ng-controller="brandViewController">
+<div class="row" ng-controller="brandViewController">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
 			<span class="input-group-addon">New Name:</span> <input type="text"
@@ -14,19 +13,19 @@
 		<table class="table table-striped">
 			<tbody>
 				<tr>
-					<th class="th">
+					<th class="th-left">
 					Name
 					 <button class="btn btn-xs" type="button">
 					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
 					 </button>
 					</th>
-					<th class="th">Commands</th>
+					<th class="th-right">Commands</th>
 				</tr>
 
 				<tr ng-repeat="brand in brands | orderBy:orderProp">
 
-					<th class="th">{{ brand.name }}</th>
-					<th class="th"><button type="button" class="btn btn-warning" id="button_brand">
+					<th class="th-left">{{ brand.name }}</th>
+					<th class="th-right"><button type="button" class="btn btn-warning" id="button_brand">
 						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
 					<button type="button" class="btn btn-danger" id="button_brand">
