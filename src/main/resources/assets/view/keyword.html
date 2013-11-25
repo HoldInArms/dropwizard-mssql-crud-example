@@ -2,9 +2,9 @@
 <div class="row" class="text-center">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
-			<span class="input-group-addon">New Name:</span> <input type="text"
-				class="form-control" placeholder="Name"> <span
-				class="input-group-btn">
+			<span class="input-group-addon">New Name:</span> 
+			<input type="text" class="form-control" placeholder="Name"> 
+			<span class="input-group-btn">
 				<button class="btn btn-primary" type="button">
 					<span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
 				</button>
@@ -15,18 +15,26 @@
 			<tbody>
 				<tr>
 					<th class="th">Id</th>
-					<th class="th">Name</th>
+					<th class="th">
+					Name
+					<button class="btn btn-xs" type="button">
+					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
+					 </button>
+					</th>
 					<th class="th">Commands</th>
 				</tr>
 				<tr>
 					<th class="th">1</th>
-					<th class="th">Aranka Keywordje</th>
-					<th class="th"><button type="button" class="btn btn-warning"
+					<th class="th">
+					<input type="text" class="form-control" value="Aranka Keywordje">
+					
+					</th>
+					<th class="th"><button type="button" class="btn btn-success"
 							id="button_brand">
-							<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+							<span class="glyphicon glyphicon-floppy-saved"></span> <b>Save</b>
 						</button>
 						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+							<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
 						</button></th>
 				</tr>
 				<tr>
