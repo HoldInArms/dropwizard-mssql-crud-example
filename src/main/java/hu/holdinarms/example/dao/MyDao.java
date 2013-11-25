@@ -59,12 +59,26 @@ public interface MyDao {
 	@Mapper(CampaignMapper.class)
 	public List<Campaign> getCampaingList();
 	
+	@SqlUpdate("insert into campaign (name,brand_id) values (:name,:brand_id)")
+	void insertToCampaign(@Bind("name") String name, @Bind("brand_id") long brand_id);
+	
+	@SqlQuery("select COUNT(*) from campaign where id = :id")
+	boolean existsCampaign( @Bind("id") String id );
+	
+	@SqlUpdate("UPDATE campaign SET name = :name, brand_id = :brand_id WHERE id = :id")
+	void updateCampaign( @Bind("id") String id, @Bind("name") String name, @Bind("brand_id") long brand_id );
+	
+	@SqlUpdate("DELETE FROM campaign WHERE id = :id")
+	void deleteCampaign( @Bind("id") String id );
 	
 	//CampaignHasKeyword
 	
 	@SqlQuery("select * from campaign_has_keyword")
 	@Mapper(CampaignHasKeywordMapper.class)
 	public List<CampaignHasKeyword> getCampaignHasKeywordList();
+	
+	@SqlUpdate("insert into campaign_has_keyword (campaign_id,keyword_id) values (:campaign_id,:keyword_id)")
+	void insertToCampaignHasKeyword(@Bind("campaign_id") long campaign_id, @Bind("keyword_id") long keyword_id);
 	
 	//Competitor
 	
