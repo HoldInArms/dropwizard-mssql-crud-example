@@ -68,6 +68,9 @@ public interface MyDao {
 	@SqlUpdate("UPDATE campaign SET name = :name, brand_id = :brand_id WHERE id = :id")
 	void updateCampaign( @Bind("id") String id, @Bind("name") String name, @Bind("brand_id") long brand_id );
 	
+	@SqlUpdate("DELETE FROM campaign WHERE id = :id")
+	void deleteCampaign( @Bind("id") String id );
+	
 	//CampaignHasKeyword
 	
 	@SqlQuery("select * from campaign_has_keyword")

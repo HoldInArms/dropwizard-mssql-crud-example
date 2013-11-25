@@ -6,6 +6,7 @@ import hu.holdinarms.example.core.Campaign;
 import hu.holdinarms.example.dao.MyDao;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -46,6 +47,12 @@ public class CampaignResource {
 		}else{
 			return false;
 		}
+	}
+	
+	@Path("{id}")
+	@DELETE
+	public void delete( @PathParam("id") String id ){
+		myDao.deleteCampaign(id);
 	}
 	
 }
