@@ -44,24 +44,30 @@ var setClasses = function($scope, next) {
 		$scope.competitorClass = "success";
 }
 
-app.controller('brandViewController', function($scope) {
-
-	$scope.brandClass = "success";
-});
+app.controller('brandViewController', [ '$scope', '$http',
+		function($scope, $http) {
+			$http({
+				method : 'GET',
+				url : '/brand'
+			}).success(function(data) {
+				$scope.brands = data;
+			});
+			$scope.orderProp = 'id';
+		} ]);
 
 app.controller('campaignViewController', function($scope) {
 
-	$scope.campaignClass = "success";
+	
 });
 
 app.controller('keywordViewController', function($scope) {
 
-	$scope.keywordClass = "success";
+	
 });
 
 app.controller('competitorViewController', function($scope) {
 
-	$scope.competitorClass = "success";
+	
 });
 
 app.controller('menuController', function($scope) {

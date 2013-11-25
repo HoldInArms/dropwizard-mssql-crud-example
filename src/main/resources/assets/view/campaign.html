@@ -1,13 +1,24 @@
-<div class="row" class="text-center">
+<div class="row">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
 			<span class="input-group-addon">New Name: </span> 
 			<input type="text" class="form-control" placeholder="Name" /> 
 			<span class="input-group-addon">Brand Id: </span> 
-				<select class="selectpicker">
-				<option>Type 1</option>
-				<option>Type 2</option>
-			</select> 
+			<span class="input-group-btn">
+			  <div class="dropdown">
+			    <button class="btn dropdown-toggle" type="button" id="campaign_dropdown" data-toggle="dropdown">
+			       			#ID
+			      <span class="caret"></span>
+			    </button>
+			    <ul class="dropdown-menu" role="menu" aria-labelledby="campaign_dropdown">
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">100</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10000</a></li>
+			    </ul>
+			  </div>
+			</span>
+			
 			<span class="input-group-btn">
 			  <button class="btn btn-primary" type="button">
 			    <span class="glyphicon glyphicon-plus"></span> 
@@ -17,9 +28,7 @@
 		</div>
 		<!-- 					<input type="text" class="form-control" readonly /> -->
 	<br /> 
-	<br /> 
-	<br />
-	
+
 	<table class="table table-striped">
 		<tbody>
 			<tr>

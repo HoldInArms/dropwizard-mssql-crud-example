@@ -1,5 +1,5 @@
 
-<div class="row" class="text-center">
+<div class="row" class="text-center" ng-controller="brandViewController">
 	<div class="col-lg-6 col-lg-offset-3">
 		<div class="input-group">
 			<span class="input-group-addon">New Name:</span> <input type="text"
@@ -14,35 +14,22 @@
 		<table class="table table-striped">
 			<tbody>
 				<tr>
-					<th class="th">Id</th>
 					<th class="th">Name</th>
 					<th class="th">Commands</th>
 				</tr>
-				<tr>
-					<th class="th">1</th>
-					<th class="th">Aranka</th>
-					<th class="th"><button type="button" class="btn btn-warning"
-							id="button_brand">
-							<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
-						</button>
-						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-						</button></th>
+
+				<tr ng-repeat="brand in brands | orderBy:orderProp">
+
+					<th class="th">{{ brand.name }}</th>
+					<th class="th"><button type="button" class="btn btn-warning" id="button_brand">
+						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_brand">
+						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+					</button></th>
 				</tr>
-				<tr>
-					<th class="th">2</th>
-					<th class="th">Tibi Atya</th>
-					<th class="th"><button type="button" class="btn btn-warning"
-							id="button_brand">
-							<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
-						</button>
-						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-						</button></th>
-				</tr>
+				
 			</tbody>
 		</table>
-
-
 	</div>
 </div>
