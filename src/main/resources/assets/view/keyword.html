@@ -1,56 +1,57 @@
-<div class="row" ng-controller="keywordViewController">
-	<div class="col-lg-6 col-lg-offset-3">
-		<div class="input-group">
-			<span class="input-group-addon">New Name:</span> 
-			<input type="text" class="form-control" placeholder="Name"  ng-model="keywordInName"> 
-			<span class="input-group-btn">
-				<button class="btn btn-primary" type="button" ng-click="setKeyword()">
-					<span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
-				</button>
-			</span>
-		</div>
-		<br />
-		<table class="table table-striped">
-			<tbody>
-				<tr>
-					<th class="th-left">
-					Name
+<div class="container" ng-controller="keywordViewController">
+	<nav class="navbar navbar-default" role="navigation">
+		<p class="navbar-text">
+			<b>New Name:</b>
+		</p>
+		<form class="navbar-form">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Name"
+					ng-model="keywordInName">
+			</div>
+			<button class="btn btn-primary navbar-right" type="button" ng-click="setKeyword()">
+				<span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
+			</button>
+		</form>
+	</nav>
+	<table class="table table-striped">
+		<tbody>
+			<tr>
+				<th class="th-left">Name
 					<button class="btn btn-xs" type="button">
-					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
-					 </button>
-					</th>
-					<th class="th-right">Commands</th>
-				</tr>
-				<tr>
-					<th class="th-left">
-					<input type="text" class="form-control" value="Aranka Keywordje">
-					
-					</th>
-					<th class="th-right"><button type="button" class="btn btn-success"
-							id="button_brand">
-							<span class="glyphicon glyphicon-floppy-saved"></span> <b>Save</b>
-						</button>
-						<button type="button" class="btn btn-danger" id="button_brand">
-							<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
-						</button></th>
-				</tr>
-					
-				<tr ng-repeat="keyword in keywords">
+						<span class="glyphicon glyphicon-chevron-down"
+							style="vertical-align: middle"></span>
+					</button>
+				</th>
+				<th class="th-right">Commands</th>
+			</tr>
+			<tr>
+				<th class="th-left"><input type="text" class="form-control"
+					value="Aranka Keywordje"></th>
+				<th class="th-right"><button type="button"
+						class="btn btn-success" id="button_brand">
+						<span class="glyphicon glyphicon-floppy-saved"></span> <b>Save</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_brand">
+						<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
+					</button></th>
+			</tr>
 
-					<th class="th-left">{{ keyword.name }}</th>
-					<th class="th-right"><button type="button" class="btn btn-warning" id="button_keyword">
+			<tr ng-repeat="keyword in keywords">
+
+				<th class="th-left">{{ keyword.name }}</th>
+				<th class="th-right"><button type="button"
+						class="btn btn-warning" id="button_keyword">
 						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
 					<button type="button" class="btn btn-danger" id="button_brand">
 						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
 					</button></th>
-				</tr>
-				
-				
-				
-			</tbody>
-		</table>
+			</tr>
 
 
-	</div>
+
+		</tbody>
+	</table>
+
+
 </div>

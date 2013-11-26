@@ -1,39 +1,48 @@
-<div class="row" ng-controller="brandViewController">
-	<div class="col-lg-6 col-lg-offset-3">
-		<div class="input-group">
-			<span class="input-group-addon">New Name:</span> <input type="text"
-				class="form-control" placeholder="Name" ng-model="brandInName"> <span
-				class="input-group-btn">
-				<button class="btn btn-primary" type="button" ng-click="setBrand()">
-					<span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
-				</button>
-			</span>
-		</div>
-		<br />
-		<table class="table table-striped">
-			<tbody>
-				<tr>
-					<th class="th-left">
-					Name
-					 <button class="btn btn-xs" type="button">
-					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
-					 </button>
-					</th>
-					<th class="th-right">Commands</th>
-				</tr>
+<div class="container" ng-controller="brandViewController">
 
-				<tr ng-repeat="brand in brands">
+	<nav class="navbar navbar-default" role="navigation">
+		<p class="navbar-text">
+			<b>New Name:</b>
+		</p>
 
-					<th class="th-left">{{ brand.name }}</th>
-					<th class="th-right"><button type="button" class="btn btn-warning" id="button_brand">
-						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
-					</button>
-					<button type="button" class="btn btn-danger" id="button_brand">
-						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-					</button></th>
-				</tr>
-				
-			</tbody>
-		</table>
-	</div>
+		<form class="navbar-form">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Name" ng-model="brandInName"/>
+			</div>
+			<button class="btn btn-primary navbar-right" type="button" ng-click="setBrand()">
+			  <span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
+		    </button>
+		</form>
+	</nav>
+<!-- 	<div class="row"> -->
+<!-- 		<div class="col-lg-6 col-lg-offset-3"> -->
+			<table class="table table-striped">
+				<tbody>
+					<tr>
+						<th class="th-left">Name
+							<button class="btn btn-xs" type="button">
+								<span class="glyphicon glyphicon-chevron-down"
+									style="vertical-align: middle"></span>
+							</button>
+						</th>
+						<th class="th-right">Commands</th>
+					</tr>
+
+					<tr ng-repeat="brand in brands">
+
+						<th class="th-left">{{ brand.name }}</th>
+						<th class="th-right"><button type="button"
+								class="btn btn-warning" id="button_brand">
+								<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+							</button>
+							<button type="button" class="btn btn-danger" id="button_brand">
+								<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+							</button></th>
+					</tr>
+
+				</tbody>
+			</table>
+<!-- 		</div> -->
+<!-- 	</div> -->
+
 </div>
