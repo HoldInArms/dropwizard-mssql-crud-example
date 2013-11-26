@@ -4,6 +4,7 @@ angular.module('holdinarmApp.controllers', []).controller(
 			Service.getBrands($scope);
 			$scope.setBrand = function() {
 				Service.setBrand($scope);
+				$scope.brandInName="";
 			};
 			
 			$scope.updateBrand = function(brandId ,brandName) {
