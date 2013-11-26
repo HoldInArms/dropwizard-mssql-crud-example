@@ -14,9 +14,7 @@
 		    </button>
 		</form>
 	</nav>
-<!-- 	<div class="row"> -->
-<!-- 		<div class="col-lg-6 col-lg-offset-3"> -->
-			<table class="table table-striped">
+			<table class="table table-striped table-bg-transparent-white">
 				<tbody>
 					<tr>
 						<th class="th-left">Name
@@ -28,21 +26,33 @@
 						<th class="th-right">Commands</th>
 					</tr>
 
-					<tr ng-repeat="brand in brands">
-
-						<th class="th-left">{{ brand.name }}</th>
-						<th class="th-right"><button type="button"
-								class="btn btn-warning" id="button_brand">
+					<tr ng-init="modify=false" ng-repeat="brand in brands">
+					
+						<th ng-show="!modify" class="th-left">{{ brand.name }}</th>
+						<th ng-show="!modify" class="th-right">								
+							<button type="button" class="btn btn-warning" id="button_brand" ng-click="modify = !modify; ">
 								<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 							</button>
-							<button type="button" class="btn btn-danger" id="button_brand">
+							<button type="button" class="btn btn-danger" id="button_brand" ng-click="deleteBrand(brand.id)">
 								<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-							</button></th>
-					</tr>
+							</button>
+						</th>
+										
+			
+						<th  ng-show="modify" class="th-left"> 
+							<input type="text" class="form-control"  ng-init="brandUpdateName=brand.name" ng-model="brandUpdateName">
+						</th>
+						<th ng-show="modify" class="th-right">
+							<button type="button" class="btn btn-success" id="button_brand_save"  ng-click="updateBrand(brand.id,brandUpdateName); modify =!modify;">
+								<span class="glyphicon glyphicon-floppy-saved"></span> <b>Save</b>
+							</button>
+							<button type="button" class="btn btn-danger" id="button_brand_cancel" ng-click="modify =!modify;">
+								<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
+							</button>
+						</th>
+					
+				</tr>
 
 				</tbody>
 			</table>
-<!-- 		</div> -->
-<!-- 	</div> -->
-
 </div>
