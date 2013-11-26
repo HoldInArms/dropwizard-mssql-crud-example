@@ -8,17 +8,27 @@ public class Campaign {
 	
 	private long brand_id;
 	
+	//
+	private String brand_name;
+	//
+	
 	public Campaign(){
-		this.id = 0;
-		this.name = "";
-		this.brand_id = 0;
+		//nothing here
 	}
 
-	public Campaign(long id, String name, long brand_id) {
+//	public Campaign(long id, String name, long brand_id) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.brand_id = brand_id;
+//	}
+	
+	public Campaign(long id, String name, long brand_id, String brand_name) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.brand_id = brand_id;
+		this.brand_name = brand_name;
 	}
 	
 	public long getId() {
@@ -43,6 +53,14 @@ public class Campaign {
 
 	public void setBrand_id(long brand_id) {
 		this.brand_id = brand_id;
+	}
+
+	public String getBrand_name() {
+		return brand_name;
+	}
+
+	public void setBrand_name(String brand_name) {
+		this.brand_name = brand_name;
 	}
 	
 }

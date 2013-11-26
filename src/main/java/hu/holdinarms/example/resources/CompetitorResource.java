@@ -20,8 +20,8 @@ public class CompetitorResource {
 		this.myDao = myDao;
 	}
 	
-	@GET
-	public List<Competitor> getCompetitorList(){
-		return myDao.getCompetitorList();
-	}
+//	@GET
+//	public List<Competitor> getCompetitorList(){
+//		return myDao.getCompetitorList();
+//	}
 }

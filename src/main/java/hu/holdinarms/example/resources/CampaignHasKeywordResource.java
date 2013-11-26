@@ -21,16 +21,16 @@ public class CampaignHasKeywordResource {
 		this.myDao = myDao;
 	}
 	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<CampaignHasKeyword> getCampaignHasKeywords(){
-		return myDao.getCampaignHasKeywordList();
-	}
-	
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void addCampaignHasKeyword( CampaignHasKeyword campaignHasKeyword ){
-		myDao.insertToCampaignHasKeyword( campaignHasKeyword.getCampaign_id(), campaignHasKeyword.getKeyword_id() );
-	}
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public List<CampaignHasKeyword> getCampaignHasKeywords(){
+//		return myDao.getCampaignHasKeywordList();
+//	}
+//	
+//	@POST
+//	@Consumes(MediaType.APPLICATION_JSON)
+//	public void addCampaignHasKeyword( CampaignHasKeyword campaignHasKeyword ){
+//		myDao.insertToCampaignHasKeyword( campaignHasKeyword.getCampaign_id(), campaignHasKeyword.getKeyword_id() );
+//	}
 	
 }
