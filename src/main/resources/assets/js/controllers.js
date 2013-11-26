@@ -1,32 +1,33 @@
 /* Controllers */
-angular.module('holdinarmApp.controllers', []).controller(
-		'brandViewController', function($scope, Service) {
-			Service.getBrands($scope);
-			$scope.setBrand = function() {
-				Service.setBrand($scope);
-				$scope.brandInName="";
-			};
-			
-			$scope.updateBrand = function(brandId ,brandName) {
-				Service.updateBrand($scope,brandId ,brandName);
-			};
+angular.module('holdinarmApp.controllers', []).
+controller('brandViewController', function($scope, Service) {
+	Service.getBrands($scope);
+	$scope.setBrand = function() {
+		Service.setBrand($scope);
+		$scope.brandInName = "";
+	};
 
-			$scope.deleteBrand = function(brandID) {
-				Service.deleteBrand($scope,brandID);
-			};
-		}).
+	$scope.updateBrand = function(brandId, brandName) {
+		Service.updateBrand($scope, brandId, brandName);
+	};
+
+	$scope.deleteBrand = function(brandID) {
+		Service.deleteBrand($scope, brandID);
+	};
+}).
 
 controller('keywordViewController', function($scope, Service) {
 	Service.getKeywords($scope);
 	$scope.setKeyword = function() {
 		Service.setKeyword($scope);
+		$scope.keywordInName = "";
 	};
-	$scope.updateKeyword = function() {
-		Service.updateKeyword($scope);
+	$scope.updateKeyword = function(keywordId, keywordName) {
+		Service.updateKeyword($scope, keywordId, keywordName);
 	};
 
-	$scope.deleteKeyword = function() {
-		Service.deleteKeyword($scope);
+	$scope.deleteKeyword = function(keywordID) {
+		Service.deleteKeyword($scope, keywordID);
 	};
 }).
 
@@ -42,7 +43,7 @@ controller('campaignViewController', function($scope, Service) {
 
 	$scope.deleteCampaign = function() {
 		Service.deleteBrand($scope);
-	};	
+	};
 }).
 
 controller('competitorViewController', function($scope, Service) {

@@ -1,4 +1,5 @@
 <div class="container" ng-controller="keywordViewController">
+
 	<nav class="navbar navbar-default" role="navigation">
 		<p class="navbar-text">
 			<b>New Name:</b>
@@ -13,45 +14,45 @@
 			</button>
 		</form>
 	</nav>
+	
 	<table class="table table-striped table-bg-transparent-white">
 		<tbody>
 			<tr>
 				<th class="th-left">Name
 					<button class="btn btn-xs" type="button">
-						<span class="glyphicon glyphicon-chevron-down"
-							style="vertical-align: middle"></span>
+						<span class="glyphicon glyphicon-chevron-down" style="vertical-align: middle"></span>
 					</button>
 				</th>
+				
 				<th class="th-right">Commands</th>
 			</tr>
-			<tr>
-				<th class="th-left"><input type="text" class="form-control"
-					value="Aranka Keywordje"></th>
-				<th class="th-right"><button type="button"
-						class="btn btn-success" id="button_brand">
+			<tr ng-init="modify=false" ng-repeat="keyword in keywords">
+			
+				<th ng-show="!modify" class="th-left">{{ keyword.name }}</th>
+				<th ng-show="!modify" class="th-right">								
+				<button type="button" class="btn btn-warning" id="button_keyword" ng-click="modify = !modify; ">
+					<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_keyword" ng-click="deleteKeyword(keyword.id)">
+						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
+					</button>
+				</th>
+										
+			
+				<th  ng-show="modify" class="th-left"> 
+					<input type="text" class="form-control"  ng-init="keywordUpdateName=keyword.name" ng-model="keywordUpdateName">
+				</th>
+				<th ng-show="modify" class="th-right">
+					<button type="button" class="btn btn-success" id="button_keyword_save"  ng-click="updateKeyword(keyword.id,keywordUpdateName); modify =!modify;">
 						<span class="glyphicon glyphicon-floppy-saved"></span> <b>Save</b>
 					</button>
-					<button type="button" class="btn btn-danger" id="button_brand">
+					<button type="button" class="btn btn-danger" id="button_keyword_cancel" ng-click="modify =!modify;">
 						<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
-					</button></th>
-			</tr>
-
-			<tr ng-repeat="keyword in keywords">
-
-				<th class="th-left">{{ keyword.name }}</th>
-				<th class="th-right"><button type="button"
-						class="btn btn-warning" id="button_keyword">
-						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
-					<button type="button" class="btn btn-danger" id="button_brand">
-						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-					</button></th>
-			</tr>
-
-
+				</th>
+					
+		</tr>
 
 		</tbody>
 	</table>
-
-
 </div>

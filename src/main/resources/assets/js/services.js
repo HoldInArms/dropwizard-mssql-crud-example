@@ -75,6 +75,7 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 	};
 
 	/** ********************KEYWORD******************** */
+	
 
 	factory.getKeywords = function($scope) {
 
@@ -88,7 +89,6 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			console.log("Success");
 
 			$scope.keywords = data;
-
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});
@@ -113,13 +113,13 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 		});
 	};
 
-	factory.updateKeyword = function($scope) {
+	factory.updateKeyword = function($scope,keywordId ,keywordName) {
 
 		$http({
-			url : "/keyword/" + $scope.keywordId,
+			url : "/keyword/" + keywordId,
 			method : "PUT",
 			data : {
-				name : $scope.keywordInName,
+				name : keywordName,
 			},
 			headers : [ {
 				'Accept' : 'application/json'
@@ -132,17 +132,17 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 		});
 	};
 
-	factory.deleteKeyword = function($scope) {
+	factory.deleteKeyword = function($scope, keywordID) {
 
 		$http({
-			url : "/keyword/" + $scope.keywordId,
+			url : "/keyword/" +keywordID,
 			method : "delete",
 			headers : [ {
 				'Accept' : 'application/json'
 			} ]
 		}).success(function(data, status, headers, config) {
 			console.log("Success");
-			factory.getBrands($scope);
+			factory.getKeywords($scope);
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});
@@ -173,7 +173,7 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			method : "POST",
 			data : {
 				name : $scope.campaignInName,
-				brand_id: $scope.brandInId
+				campaign_id: $scope.campaignInId
 			},
 			headers : [ {
 				'Accept' : 'application/json'
