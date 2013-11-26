@@ -152,7 +152,7 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 	/** **********************************CAMPAIGN************************ */
 
 	factory.getCampaigns = function($scope) {
-
+		var tmp = [];
 		$http({
 			url : "/campaign",
 			method : "GET",
@@ -161,7 +161,7 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			} ]
 		}).success(function(data, status, headers, config) {
 			console.log("Success");
-			
+			tmp = data;
 			$scope.campaigns = data;
 			
 		}).error(function(data, status, headers, config) {
@@ -170,12 +170,12 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 	};
 
 	factory.setCampaign = function($scope) {
-
 		$http({
 			url : "/campaign",
 			method : "POST",
 			data : {
 				name : $scope.campaignInName,
+				brand_id: $scope.brandInId
 			},
 			headers : [ {
 				'Accept' : 'application/json'
