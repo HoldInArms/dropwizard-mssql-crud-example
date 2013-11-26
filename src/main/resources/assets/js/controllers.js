@@ -5,12 +5,13 @@ angular.module('holdinarmApp.controllers', []).controller(
 			$scope.setBrand = function() {
 				Service.setBrand($scope);
 			};
-			$scope.updateBrand = function() {
-				Service.updateBrand($scope);
+			
+			$scope.updateBrand = function(brandId ,brandName) {
+				Service.updateBrand($scope,brandId ,brandName);
 			};
 
-			$scope.deleteBrand = function() {
-				Service.deleteBrand($scope);
+			$scope.deleteBrand = function(brandID) {
+				Service.deleteBrand($scope,brandID);
 			};
 		}).
 

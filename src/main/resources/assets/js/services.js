@@ -39,13 +39,13 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 		});
 	};
 
-	factory.updateBrand = function($scope) {
+	factory.updateBrand = function($scope,brandId ,brandName) {
 
 		$http({
-			url : "/brand/" + $scope.brandId,
+			url : "/brand/" + brandId,
 			method : "PUT",
 			data : {
-				name : $scope.brandInName,
+				name : brandName,
 			},
 			headers : [ {
 				'Accept' : 'application/json'
@@ -58,10 +58,10 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 		});
 	};
 
-	factory.deleteBrand = function($scope) {
+	factory.deleteBrand = function($scope, brandID) {
 
 		$http({
-			url : "/brand/" + $scope.brandId,
+			url : "/brand/" +brandID,
 			method : "delete",
 			headers : [ {
 				'Accept' : 'application/json'
