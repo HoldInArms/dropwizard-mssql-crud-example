@@ -5,7 +5,7 @@
 			<input type="text" class="form-control" placeholder="Name"  ng-model="campaignInName"/> 
 			<span class="input-group-addon">Brand Name: </span> 
 			<span class="input-group-btn">
-				<select ng-model="brandInId" ng-options="item.brand_id as item.brand_name for item in campaigns"></select>
+				<select ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select>
 			</span>
 			
 			<span class="input-group-btn">
