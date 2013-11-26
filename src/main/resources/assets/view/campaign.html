@@ -12,28 +12,13 @@
 		  <p class="navbar-text">
 		    <b>Brand Name:</b>
 		  </p>
-		  <select class="select navbar-btn" ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select>
+		  <select class="select navbar-btn" ng-model="campaigndInBrandId" ng-options="item.id as item.name for item in brands"></select>
 	    </div>
-	    <button class="btn btn-primary navbar-right navbar-btn" type="button" ng-click="setCampaign()">
+	    <button class="btn btn-primary navbar-right navbar-btn" type="button" ng-click="setCampaign(brand.name)">
 		    <span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
 		  </button>
 	  </form>
 	</nav>
-
-	<!-- 	<div class="col-lg-6 col-lg-offset-3"> -->
-	<!-- 		<div class="input-group"> -->
-	<!-- 			<span class="input-group-addon">New Name: </span>  -->
-	<!-- 			<input type="text" class="form-control" placeholder="Name"  ng-model="campaignInName"/>  -->
-	<!-- 			<span class="input-group-addon">Brand Name: </span>  -->
-	<!-- 			<span class="input-group-btn"> -->
-	<!-- 				<select ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select> -->
-	<!-- 			</span> -->
-
-	<!-- 			<span class="input-group-btn"> -->
-
-	<!-- 			</span> -->
-	<!-- 		</div> -->
-	<!-- 					<input type="text" class="form-control" readonly /> -->
 	<br />
 
 	<table class="table table-striped table-bg-transparent-white">
@@ -54,17 +39,38 @@
 				<th class="th-right">Commands</th>
 			</tr>
 
-			<tr ng-repeat="campaign in campaigns">
+			<tr ng-init="modify=false" ng-repeat="campaign in campaigns">
 
-				<th class="th-left">{{ campaign.name }}</th>
-				<th class="th-left">{{ campaign.brand_name }}</th>
-				<th class="th-right"><button type="button"
-						class="btn btn-warning" id="button_keyword">
+				<th ng-show="!modify" class="th-left">{{ campaign.name }}</th>
+				<th ng-show="!modify" class="th-left">{{ campaign.brand_name }}</th>
+				<th ng-show="!modify" class="th-right">
+					<button type="button" class="btn btn-warning" id="button_keyword" ng-click="modify = !modify">
 						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
-					<button type="button" class="btn btn-danger" id="button_brand">
+					<button type="button" class="btn btn-danger" id="button_brand" ng-click="deleteCampaign(campaign.id)">
 						<span class="glyphicon glyphicon-remove-sign"></span> <b>Delete</b>
-					</button></th>
+					</button>
+				</th>
+				
+				
+				<th  ng-show="modify" class="th-left"> 
+					<input type="text" class="form-control"  ng-init="campaignUpdateName=campaign.name" ng-model="campaignUpdateName">
+				</th>
+				
+				<th  ng-show="modify" class="th-left">
+					<select class="select navbar-btn" ng-model="campaigndInUpdateBrandId" ng-options="item.id as item.name for item in brands"></select>
+				</th>
+				
+				<th ng-show="modify" class="th-right">
+					<button type="button" class="btn btn-success" id="button_campaign_save"  ng-click="updateCampaign(campaign.id, campaignUpdateName, campaigndInUpdateBrandId, campaign.brand_name); modify =!modify;">
+						<span class="glyphicon glyphicon-floppy-saved"></span> <b>Save</b>
+					</button>
+					<button type="button" class="btn btn-danger" id="button_campaign_cancel" ng-click="modify =!modify;">
+						<span class="glyphicon glyphicon-floppy-remove"></span> <b>Cancel</b>
+					</button>
+				</th>
+				
+				
 			</tr>
 		</tbody>
 	</table>

@@ -167,13 +167,18 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 		});
 	};
 
-	factory.setCampaign = function($scope) {
+	factory.setCampaign = function($scope, brandName) {
 		$http({
 			url : "/campaign",
 			method : "POST",
 			data : {
 				name : $scope.campaignInName,
+<<<<<<< HEAD
+				brand_id: $scope.campaigndInBrandId,
+				brand_name: brandName
+=======
 				campaign_id: $scope.campaignInId
+>>>>>>> d9259158e4d9be18c052972fbc31f412595ddf92
 			},
 			headers : [ {
 				'Accept' : 'application/json'
@@ -186,36 +191,38 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 		});
 	};
 
-	factory.updateCampaign = function($scope) {
+	factory.updateCampaign = function($scope, campaignId, campaignUpdateName, campaigndInUpdateBrandId, campaignBrandName) {
 
 		$http({
-			url : "/campaign/" + $scope.campaignId,
+			url : "/campaign/" + campaignId,
 			method : "PUT",
 			data : {
-				name : $scope.campaignInName,
+				name : campaignUpdateName,
+				brand_id: campaigndInUpdateBrandId,
+				brand_name: campaignBrandName
 			},
 			headers : [ {
 				'Accept' : 'application/json'
 			} ]
 		}).success(function(data, status, headers, config) {
 			console.log("Success");
-			factory.getcampaigns($scope);
+			factory.getCampaigns($scope);
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});
 	};
 
-	factory.deleteCampaign = function($scope) {
+	factory.deleteCampaign = function($scope, campaignId) {
 
 		$http({
-			url : "/campaign/" + $scope.campaignId,
+			url : "/campaign/" + campaignId,
 			method : "delete",
 			headers : [ {
 				'Accept' : 'application/json'
 			} ]
 		}).success(function(data, status, headers, config) {
 			console.log("Success");
-			factory.getcampaigns($scope);
+			factory.getCampaigns($scope);
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});

@@ -46,25 +46,23 @@
 	<br />
 	<div ng-controller="menuController">
 	
-	  <div class="container">
-
-    <nav class="navbar" role="navigation">
-      <div class="input-group-btn">    
-      <ul class="nav nav-justified">
-        <li><span class="input-group-btn"><button type="button" class="btn btn-{{ brandClass }} navbar-btn btn-block" id="button_brand" onclick="location.href='#brand'"><span class="glyphicon glyphicon-star"></span> Brand</button></span></li>
-        <li><span class="input-group-btn"><button type="button" class="btn btn-{{keywordClass}} navbar-btn btn-block" id="button_keyword" onclick="location.href='#keyword'"><span class="glyphicon glyphicon-asterisk"></span> Keyword</button></span></li>
-	    <li><span class="input-group-btn"><button type="button" class="btn btn-{{campaignClass}} navbar-btn btn-block" id="button_campaign" onclick="location.href='#campaign'"><span class="glyphicon glyphicon-globe"></span> Campaign</button></span></li>
-	    <li><span class="input-group-btn"><button type="button" class="btn btn-{{competitorClass}} navbar-btn btn-block" id="button_competitor" onclick="location.href='#competitor'"><span class="glyphicon glyphicon-user"></span> Competitor</button></span></li>
-	  </ul>
-	  </div>
-    </nav>
-	  
-	</div>
+		 <div class="container">
+	
+		    <nav class="navbar" role="navigation">
+		      <div class="input-group-btn">    
+		      <ul class="nav nav-justified">
+		        <li><span class="input-group-btn"><button type="button" class="btn btn-{{ brandClass }} navbar-btn btn-block" id="button_brand" onclick="location.href='#brand'"><span class="glyphicon glyphicon-star"></span> Brand</button></span></li>
+		        <li><span class="input-group-btn"><button type="button" class="btn btn-{{keywordClass}} navbar-btn btn-block" id="button_keyword" onclick="location.href='#keyword'"><span class="glyphicon glyphicon-asterisk"></span> Keyword</button></span></li>
+			    <li><span class="input-group-btn"><button type="button" class="btn btn-{{campaignClass}} navbar-btn btn-block" id="button_campaign" onclick="location.href='#campaign'"><span class="glyphicon glyphicon-globe"></span> Campaign</button></span></li>
+			    <li><span class="input-group-btn"><button type="button" class="btn btn-{{competitorClass}} navbar-btn btn-block" id="button_competitor" onclick="location.href='#competitor'"><span class="glyphicon glyphicon-user"></span> Competitor</button></span></li>
+			  </ul>
+			  </div>
+		    </nav>
+				  
+		</div>
 	
 	</div>
-	<br />
-	<br />
-	<br />
+
 	<div ng-view>
 	</div>
 </body>
