@@ -30,7 +30,7 @@ controller('keywordViewController', function($scope, Service) {
 
 controller('campaignViewController', function($scope, Service) {
 	Service.getCampaigns($scope);
-	Service.getBrands($scope);
+
 	$scope.setCampaign = function() {
 		Service.setCampaign($scope);
 	};
@@ -40,7 +40,7 @@ controller('campaignViewController', function($scope, Service) {
 
 	$scope.deleteCampaign = function() {
 		Service.deleteBrand($scope);
-	};
+	};	
 }).
 
 controller('competitorViewController', function($scope, Service) {

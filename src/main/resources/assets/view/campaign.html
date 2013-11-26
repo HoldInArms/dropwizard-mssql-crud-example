@@ -5,7 +5,7 @@
 			<input type="text" class="form-control" placeholder="Name"  ng-model="campaignInName"/> 
 			<span class="input-group-addon">Brand Name: </span> 
 			<span class="input-group-btn">
-				<select ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select>
+				<select ng-model="brandInId" ng-options="item.brand_id as item.brand_name for item in campaigns"></select>
 			</span>
 			
 			<span class="input-group-btn">
@@ -39,7 +39,7 @@
 			<tr ng-repeat="campaign in campaigns">
 
 					<th class="th-left">{{ campaign.name }}</th>
-					<th class="th-left">{{campaign.brand_id }}</th>
+					<th class="th-left">{{ campaign.brand_name }}</th>
 					<th class="th-right"><button type="button" class="btn btn-warning" id="button_keyword">
 						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
