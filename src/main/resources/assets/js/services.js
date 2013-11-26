@@ -15,7 +15,6 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			console.log("Success");
 
 			$scope.brands = data;
-
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});
@@ -161,9 +160,8 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			} ]
 		}).success(function(data, status, headers, config) {
 			console.log("Success");
-			tmp = data;
+
 			$scope.campaigns = data;
-			
 		}).error(function(data, status, headers, config) {
 			console.log("Error");
 		});
