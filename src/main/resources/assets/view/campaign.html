@@ -1,46 +1,65 @@
-<div class="row" ng-controller="campaignViewController">
-	<div class="col-lg-6 col-lg-offset-3">
-		<div class="input-group">
-			<span class="input-group-addon">New Name: </span> 
-			<input type="text" class="form-control" placeholder="Name"  ng-model="campaignInName"/> 
-			<span class="input-group-addon">Brand Name: </span> 
-			<span class="input-group-btn">
-				<select ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select>
-			</span>
-			
-			<span class="input-group-btn">
-			  <button class="btn btn-primary" type="button" ng-click="setCampaign()">
-			    <span class="glyphicon glyphicon-plus"></span> 
-			      <b>Add New Data</b>
-				</button>
-			</span>
+<div class="container" ng-controller="campaignViewController">
+
+	<nav class="navbar navbar-default" role="navigation">
+	  <form class="navbar-form">
+	    <p class="navbar-text">
+		  <b>New Name:</b>
+		</p>
+		<div class="form-group">
+		  <input type="text" class="form-control" placeholder="Name" ng-model="campaignInName" />
 		</div>
-		<!-- 					<input type="text" class="form-control" readonly /> -->
-	<br /> 
+		<div class="form-group">
+		  <p class="navbar-text">
+		    <b>Brand Name:</b>
+		  </p>
+		  <select class="select navbar-btn" ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select>
+	    </div>
+	    <button class="btn btn-primary navbar-right navbar-btn" type="button" ng-click="setCampaign()">
+		    <span class="glyphicon glyphicon-plus"></span> <b>Add New Data</b>
+		  </button>
+	  </form>
+	</nav>
+
+	<!-- 	<div class="col-lg-6 col-lg-offset-3"> -->
+	<!-- 		<div class="input-group"> -->
+	<!-- 			<span class="input-group-addon">New Name: </span>  -->
+	<!-- 			<input type="text" class="form-control" placeholder="Name"  ng-model="campaignInName"/>  -->
+	<!-- 			<span class="input-group-addon">Brand Name: </span>  -->
+	<!-- 			<span class="input-group-btn"> -->
+	<!-- 				<select ng-model="brandInId" ng-options="item.id as item.name for item in brands"></select> -->
+	<!-- 			</span> -->
+
+	<!-- 			<span class="input-group-btn"> -->
+
+	<!-- 			</span> -->
+	<!-- 		</div> -->
+	<!-- 					<input type="text" class="form-control" readonly /> -->
+	<br />
 
 	<table class="table table-striped table-bg-transparent-white">
 		<tbody>
 			<tr>
-				<th class="th-left">
-				Name
-				<button class="btn btn-xs" type="button">
-					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
-					 </button>
+				<th class="th-left">Name
+					<button class="btn btn-xs" type="button">
+						<span class="glyphicon glyphicon-chevron-down"
+							style="vertical-align: middle"></span>
+					</button>
 				</th>
-				<th class="th-left">
-				Brand Name
-				<button class="btn btn-xs" type="button">
-					   <span class="glyphicon glyphicon-chevron-down" style="vertical-align:middle"></span>
-					 </button>
+				<th class="th-left">Brand Name
+					<button class="btn btn-xs" type="button">
+						<span class="glyphicon glyphicon-chevron-down"
+							style="vertical-align: middle"></span>
+					</button>
 				</th>
 				<th class="th-right">Commands</th>
 			</tr>
-			
+
 			<tr ng-repeat="campaign in campaigns">
 
-					<th class="th-left">{{ campaign.name }}</th>
-					<th class="th-left">{{ campaign.brand_name }}</th>
-					<th class="th-right"><button type="button" class="btn btn-warning" id="button_keyword">
+				<th class="th-left">{{ campaign.name }}</th>
+				<th class="th-left">{{ campaign.brand_name }}</th>
+				<th class="th-right"><button type="button"
+						class="btn btn-warning" id="button_keyword">
 						<span class="glyphicon glyphicon-pencil"></span> <b>Modify</b>
 					</button>
 					<button type="button" class="btn btn-danger" id="button_brand">
@@ -49,5 +68,5 @@
 			</tr>
 		</tbody>
 	</table>
-  </div>
+	<!--   </div> -->
 </div>
