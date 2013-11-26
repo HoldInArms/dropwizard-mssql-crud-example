@@ -55,7 +55,11 @@ public interface MyDao {
 	
 	//Campaign
 	
-	@SqlQuery("select * from campaign")
+//	@SqlQuery("select * from campaign")
+//	@Mapper(CampaignMapper.class)
+//	public List<Campaign> getCampaingList();
+	
+	@SqlQuery("select campaign.id as id, campaign.name as name, campaign.brand_id as brand_id, brand.name as brand_name from campaign LEFT JOIN brand ON campaign.brand_id = brand.id")
 	@Mapper(CampaignMapper.class)
 	public List<Campaign> getCampaingList();
 	
@@ -73,17 +77,17 @@ public interface MyDao {
 	
 	//CampaignHasKeyword
 	
-	@SqlQuery("select * from campaign_has_keyword")
-	@Mapper(CampaignHasKeywordMapper.class)
-	public List<CampaignHasKeyword> getCampaignHasKeywordList();
-	
-	@SqlUpdate("insert into campaign_has_keyword (campaign_id,keyword_id) values (:campaign_id,:keyword_id)")
-	void insertToCampaignHasKeyword(@Bind("campaign_id") long campaign_id, @Bind("keyword_id") long keyword_id);
+//	@SqlQuery("select * from campaign_has_keyword")
+//	@Mapper(CampaignHasKeywordMapper.class)
+//	public List<CampaignHasKeyword> getCampaignHasKeywordList();
+//	
+//	@SqlUpdate("insert into campaign_has_keyword (campaign_id,keyword_id) values (:campaign_id,:keyword_id)")
+//	void insertToCampaignHasKeyword(@Bind("campaign_id") long campaign_id, @Bind("keyword_id") long keyword_id);
 	
 	//Competitor
 	
-	@SqlQuery("select * from competitor")
-	@Mapper(CompetitorMapper.class)
-	public List<Competitor> getCompetitorList();
+//	@SqlQuery("select * from competitor")
+//	@Mapper(CompetitorMapper.class)
+//	public List<Competitor> getCompetitorList();
 	
 }

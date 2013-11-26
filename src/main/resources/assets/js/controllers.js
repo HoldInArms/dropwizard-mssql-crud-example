@@ -40,7 +40,7 @@ controller('campaignViewController', function($scope, Service) {
 
 	$scope.deleteCampaign = function() {
 		Service.deleteBrand($scope);
-	};
+	};	
 }).
 
 controller('competitorViewController', function($scope, Service) {
