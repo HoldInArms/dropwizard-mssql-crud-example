@@ -173,12 +173,8 @@ angular.module('holdinarmApp.services', []).factory('Service', function($http) {
 			method : "POST",
 			data : {
 				name : $scope.campaignInName,
-<<<<<<< HEAD
 				brand_id: $scope.campaigndInBrandId,
 				brand_name: brandName
-=======
-				campaign_id: $scope.campaignInId
->>>>>>> d9259158e4d9be18c052972fbc31f412595ddf92
 			},
 			headers : [ {
 				'Accept' : 'application/json'

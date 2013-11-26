@@ -42,13 +42,9 @@ controller('campaignViewController', function($scope, Service) {
 		Service.updateCampaign($scope, campaignId, campaignUpdateName, campaigndInUpdateBrandId, campaignBrandName);
 	};
 
-<<<<<<< HEAD
+
 	$scope.deleteCampaign = function(campaignId) {
 		Service.deleteCampaign($scope,campaignId);
-=======
-	$scope.deleteCampaign = function() {
-		Service.deleteBrand($scope);
->>>>>>> d9259158e4d9be18c052972fbc31f412595ddf92
 	};
 }).
 
