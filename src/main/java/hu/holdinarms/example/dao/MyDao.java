@@ -5,6 +5,8 @@ import hu.holdinarms.example.core.Campaign;
 import hu.holdinarms.example.core.CampaignHasKeyword;
 import hu.holdinarms.example.core.Competitor;
 import hu.holdinarms.example.core.Keyword;
+import hu.holdinarms.example.core.User;
+import hu.holdinarms.example.core.UserRoles;
 
 import java.util.List;
 
@@ -74,6 +76,14 @@ public interface MyDao {
 	
 	@SqlUpdate("DELETE FROM campaign WHERE id = :id")
 	void deleteCampaign( @Bind("id") String id );
+	
+	@SqlQuery("select id, username from users where username = :username and password = :password")
+	@Mapper(UserMapper.class)
+	User getAuthenticatedUser(@Bind("username") String username, @Bind("password") String password);
+	
+	@SqlQuery("select id, user_id, role from user_roles where user_id = :user_id")
+	@Mapper(UserRoleMapper.class)
+	List<UserRoles> getUserRoles(@Bind("user_id") long userId);
 	
 	//CampaignHasKeyword
 	

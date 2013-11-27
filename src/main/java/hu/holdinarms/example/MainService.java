@@ -10,6 +10,7 @@ import hu.holdinarms.example.resources.CampaignResource;
 import hu.holdinarms.example.resources.CompetitorResource;
 import hu.holdinarms.example.resources.HtmlPageResource;
 import hu.holdinarms.example.resources.KeywordResource;
+import hu.holdinarms.example.resources.UserResource;
 
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
@@ -49,6 +50,7 @@ public class MainService extends Service<MainConfiguration>{
 		
 		environment.addResource( new HtmlPageResource() );
 		environment.addResource( new BrandResource( dao ) );
+		environment.addResource( new UserResource(dao) );
 		environment.addResource( new KeywordResource( dao ) );
 		environment.addResource( new CampaignResource( dao ));
 		environment.addResource( new CampaignHasKeywordResource( dao ) );

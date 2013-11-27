@@ -76,4 +76,38 @@
           		referencedTableName="keyword" />
         
     </changeSet>
+    
+    <changeSet id="2" author="szabob">
+    	<createTable tableName="users">
+          	<column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+          	<column name="username" type="varchar(250)"></column>
+          	<column name="password" type="varchar(250)"></column>
+          </createTable>
+          
+        <createTable tableName="user_roles">
+        	<column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="bigint"></column>
+            <column name="role" type="varchar(250)"></column>
+        </createTable>
+        
+        <addForeignKeyConstraint 
+          		baseColumnNames="user_id"
+          		baseTableName="user_roles"
+          		constraintName="user_role_fk"
+          		referencedColumnNames="id"
+          		referencedTableName="users" />
+          		
+          <insert tableName="users">
+          	<column name="username">admin</column>
+          	<column name="password">admin</column>
+          </insert>
+          <insert tableName="user_roles">
+          	<column name="user_id">1</column>
+          	<column name="role">role_admin</column>
+          </insert>
+    </changeSet>
 </databaseChangeLog>
