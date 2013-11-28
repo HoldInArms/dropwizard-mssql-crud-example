@@ -63,10 +63,10 @@ controller('competitorViewController', function($scope, Service) {
 }).
 
 controller('menuController', function($scope) {
-	$scope.$on("$routeChangeSuccess", function(angularEvent, next, current) {
+	$scope.$on("$routeChangeSuccess", function(angularEvent, current, previous) {
 		// calls set setClasses method, and converts originalPath to
 		// /originalPath to originalPathClass
-		setClasses($scope, next.originalPath.split("/")[1] += "Class");
+		setClasses($scope, current.originalPath.split("/")[1] += "Class");
 	});
 });
 

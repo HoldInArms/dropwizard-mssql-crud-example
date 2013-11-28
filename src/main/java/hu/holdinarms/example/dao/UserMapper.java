@@ -19,8 +19,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
  */
 public class UserMapper implements ResultSetMapper<User>{
 
-	@Override
-	public User map(int index, ResultSet r, StatementContext ctx) throws SQLException {
+	public User map(final int index, final ResultSet r, final StatementContext ctx) throws SQLException {
 		return new User( r.getLong("id") , r.getString("username") );
 	}
 

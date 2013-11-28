@@ -19,8 +19,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
  */
 public class UserRoleMapper implements ResultSetMapper<UserRoles>{
 
-	@Override
-	public UserRoles map(int index, ResultSet r, StatementContext ctx) throws SQLException {
+	public UserRoles map(final int index, final ResultSet r, final StatementContext ctx) throws SQLException {
 		return new UserRoles( r.getLong("id") , r.getLong("user_id"), r.getString("role") );
 	}
 
